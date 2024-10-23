@@ -1,0 +1,21 @@
+{% load static %}
+<link rel="stylesheet" href="{% static '/style/main.css' %}">
+
+<div class="delete-container">
+    <p>Are you sure you want to delete 
+    </br> </br>
+    "{{ task }}" task?</p>
+    
+    <form action="" method="POST">
+        {% csrf_token %}
+        <button type="submit">Confirm</button>
+        
+        {% if request.GET.pre == 'list' %}
+            <a href="{% url 'list' %}">Go Back</a>
+        {% elif request.GET.pre == 'update-task' %}
+            <a href="{% url 'update-task' task.id %}">Go Back</a>
+        {% else %}
+            <a type="button" onclick="window.history.back()">Go Back</a>
+        {% endif %}
+    </form>
+</div>

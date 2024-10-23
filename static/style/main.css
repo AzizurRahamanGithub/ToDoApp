@@ -1,0 +1,327 @@
+body {
+    background-image: url('../img/nature_dark.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #333; 
+}
+
+/* Azizur Rahaman */
+/* list.html Start */
+/* General Container Styles */
+.container {
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.486);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 100px auto;
+}
+
+/* Scrollbar Styles */
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Task List Styles */
+.task_list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: 400px;
+    overflow-y: scroll;
+    padding-right: 15px;
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+}
+
+.task_list::-webkit-scrollbar {
+    display: none; 
+}
+
+/* Heading Styles */
+h3 {
+    font-size: 34px;
+    font-weight: 600;
+    color: #f6fbfc;
+    text-align: center;
+}
+
+/* Text Styles */
+.text {
+    color: #f6fbfc;
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+/* Link Styles */
+a {
+    color: #007aff; /* macOS blue link color */
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Button Styles */
+input[type="submit"],
+button {
+    background-color: rgba(255, 255, 255, 0.5); /* Transparent button */
+    color: #007aff;
+    border: 1px solid #007aff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    backdrop-filter: blur(5px);
+    transition: background-color 0.19s ease-in-out;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: rgba(0, 122, 255, 0.1); /* Subtle blue hover effect */
+}
+
+/* Input Field Styles */
+.inputForm input {
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.418); /* Transparent input fields */
+    color: #007aff;
+    width: 100%;
+    margin-bottom: 20px;
+    backdrop-filter: blur(5px);
+}
+
+/* Check Task Styles */
+.check_task {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+}
+
+.task_del_up{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+.delete{
+
+    margin-right: 0px;
+
+}
+.delete, .update{
+    background-color:rgba(255, 255, 255, 0.699);
+    padding: 5px 15px;
+    border-radius: 8px 8px 0 0 ;
+}
+
+/* Completion Indicator Styles */
+.comp {
+    color:   #00ff95;
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.incom {
+    color:  #ff0000;
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Task Item Styles */
+.task {
+    display: flex;
+    justify-content: space-between;
+}
+
+.completed,
+.incomplete {
+    background-color: rgba(255, 255, 255, 0.418); /* Slightly more transparent background for tasks */
+    padding: 10px;
+    border-radius: 0 0px 8px 8px;
+    margin-bottom: 10px;
+    backdrop-filter: blur(5px); /* Add backdrop filter for tasks */
+}
+
+.completed .com {
+    color: green;
+}
+
+.incomplete .com {
+    color: rgb(128, 0, 0);
+}
+
+
+/* Azizur Rahaman */
+/* list.html END */
+
+
+
+/* Azizur Rahaman */
+/* update_task.html Start */
+
+/* Container styling */
+.update-container {
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.486); /* Transparent background */
+    padding: 0;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 100px auto;
+    height: 310px;
+    padding: 10px 25px;
+}
+
+.update-container h3 {
+    font-size: 34px;
+    font-weight: 600;
+    color: #f6fbfc;
+    text-align: center;
+}
+
+.update-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.update-container input[type="submit"] {
+    background-color: rgba(255, 255, 255, 0.5); /* Transparent button */
+    color: #007aff; /* macOS blue button text */
+    border: 1px solid #007aff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    backdrop-filter: blur(5px);
+    font-weight: 500;
+    transition: all .19s ease-in-out;
+}
+
+.update-container input[type="submit"]:hover {
+    background-color:rgba(255, 255, 255, 0.76); /* Subtle blue hover effect */
+}
+
+.update-container input[type="text"], /* Target text input fields like form.title */
+.update-container textarea {
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.418); /* Transparent input fields */
+    color: #333;
+    backdrop-filter: blur(5px);
+    width: 100%;
+    text-decoration: none; /* Remove any text decoration */
+    box-shadow: none; /* Remove any shadow */
+    outline: none; /* Remove focus outline */
+}
+
+.update-container label {
+    display: flex;
+    align-items: center;
+    color: #f6fbfc; /* Light text color */
+}
+
+.update-container input[type="checkbox"] {
+    margin-left: 10px;
+}
+
+.update-container input[type="submit"],
+.update-container a {
+    background-color: rgba(255, 255, 255, 0.5); /* Transparent buttons */
+    color: #007aff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    font-size: 16px;
+    transition: all .19s ease-in-out;
+    margin-bottom: 10px;
+}
+
+.update-container input[type="submit"]:hover,
+.update-container a:hover {
+    background-color: rgba(255, 255, 255, 0.76); /* Subtle blue hover effect */
+}
+
+
+/* Azizur Rahaman */
+/* update_task.html END */
+
+
+
+/* Azizur Rahaman */
+/* delete.html Start */
+
+.delete-container {
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.486); /* Transparent background */
+    padding: 0;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 100px auto;
+    padding: 10px 25px; /* Add some padding */
+}
+
+.delete-container p {
+    font-size: 20px; /* Adjust font size for confirmation message */
+    font-weight: 500;
+    color: #f6fbfc; /* Light text color */
+    text-align: center;
+}
+
+.delete-container form {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center; /* Center align items */
+}
+
+.delete-container button,
+.delete-container a {
+    background-color: rgba(255, 255, 255, 0.5); /* Transparent button */
+    color: #007aff; /* macOS blue button text */
+    border: none; /* Remove border */
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    backdrop-filter: blur(5px);
+    font-weight: 500;
+    text-decoration: none; /* Remove underline from links */
+    text-align: center;
+    transition: all .19s ease-in-out;
+}
+
+.delete-container button:hover,
+.delete-container a:hover {
+    background-color: rgba(255, 255, 255, 0.76); /* Subtle blue hover effect */
+}
+
+
+
+/* Azizur Rahaman */
+/* update_task.html END */

@@ -1,0 +1,39 @@
+{% load static %}
+<link rel="stylesheet" href="{% static '/style/main.css' %}">
+
+<div class="container">
+    <h3 class="">To Do</h3>
+
+    <form class="inputForm" method="POST">
+        {% csrf_token %}
+        {{ form.title }}
+        <input type="submit" value="submit">
+    </form>
+    <div class="check_task">
+        <div class="text">
+           <div class="">Completed tasks: <span class="comp">{{ completed_task }}</span> </div> 
+           <div class=""> Incomplete tasks: <span class="incom"> {{ incomplete_task }}</span> </div> 
+        </div>
+    </div>
+
+    <div class="task_list">
+
+        {% for task in tasks %}
+        <div class="">
+            <div class="task_del_up">
+                <a href="{% url 'update-task' task.id %}" class="update">Update</a>
+            <a href="{% url 'delete-task' task.id %}?pre=list" class="delete">Delete</a>
+            </div>
+            
+      
+
+        <div class="{% if task.complete %}completed{% else %}incomplete{% endif %} task">
+            <span>{{ task.title }}</span>
+            <span class="com">
+                {% if task.complete %}Completed{% else %}Incomplete{% endif %}
+            </span>
+        </div>
+    </div>
+        {% endfor %}
+    </div>
+</div>
