@@ -6,6 +6,43 @@ body {
     color: #333; 
 }
 
+.popup {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 8px;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 1s ease-in-out; /* Smooth fade-out effect */
+    display: none; /* Initially hidden */
+    font-size: 16px;
+}
+
+.popup.hidden {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    pointer-events: none; /* Prevent interaction when hidden */
+}
+
+/* Color-coded pop-ups */
+.popup.green {
+    background-color: #4CAF50; /* Green for adding task */
+}
+
+.popup.red {
+    background-color: #f44336; /* Red for deleting task */
+}
+
+.popup.blue {
+    background-color: #2196F3; /* Blue for updating task */
+}
+
+
+
 /* Azizur Rahaman */
 /* list.html Start */
 /* General Container Styles */
